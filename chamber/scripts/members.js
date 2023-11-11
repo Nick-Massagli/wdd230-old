@@ -1,4 +1,4 @@
-const requestURL = '../data/members.json';
+const requestURL = 'https://raw.githubusercontent.com/Nick-Massagli/wdd230/main/chamber/data/members.json';
 
 fetch(requestURL)
   .then(function (response) {
@@ -14,18 +14,19 @@ fetch(requestURL)
         let h2 = document.createElement('h2');
         let p = document.createElement('p');
         let p2 = document.createElement('p');
-        let pimg = document.createElement('img');
+        let p3 = document.createElement('p');
+        let p4 = document.createElement('p');
 
-        h2.textContent = `${prophet.name} ${prophet.lastname}`;
-        p.textContent = `Date of Birth: ${prophet.birthdate}`;
-        p2.textContent = `Place of Birth: ${prophet.birthplace}`;
-        pimg.setAttribute('src', prophet.imageurl);
-        pimg.setAttribute('alt', `Date of Birth: ${prophet.birthdate}`);
-        pimg.setAttribute('loading','lazy');
+        h2.textContent = `${member.name}`;
+        p.textContent = `Address: ${member.address}`;
+        p2.textContent = `Phone Number(s): ${member.phone}`;
+        p3.textContent = `URL: ${member.url}`;
+        p4.textContent = `Membership Level: ${member.membership}`;
         card.append(h2);
         card.append(p);
         card.append(p2);
-        card.append(pimg);
+        card.append(p3);
+        card.append(p4);
         cards.append(card);
     });
   });
